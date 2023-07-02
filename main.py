@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+from models.item_model import Item
+from typing import Union
 
 app = FastAPI()
 
