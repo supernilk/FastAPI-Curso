@@ -19,6 +19,6 @@ def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
 #ejemplo de una calculadora que sume
-@app.get("/suma/")
-def calculadora(opeardor1:float,operador2:float):
-    return {'suma':opeardor1+operador2}
+@app.get("/suma")
+def sumar(operador1:float,operador2:float):
+    return {'suma':operador1+operador2}
