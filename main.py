@@ -1,6 +1,6 @@
 from typing import Union
-
 from fastapi import FastAPI
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -33,4 +33,19 @@ def sumar(operador1:float,operador2:float):
  Tipos de parametros de una ruta:
     * Ruta /
     * Consulta ?,&
+
+ Get   -> consultar
+ Put   -> actualizar
+ Post  -> crear
+ Delet -> borrar
+
 """
+
+#vamos a tabajar con un tipo de datos y usaremos
+# el modelo BaseModel y put para actualizar datos 
+# atravez de la libreria pydantic del modelo BaseModel
+
+class Item(BaseModel):
+    name: str
+    price: float
+    is_offert: Union(bool,None) = None
