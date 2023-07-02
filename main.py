@@ -45,11 +45,12 @@ def sumar(operador1:float,operador2:float):
 # el modelo BaseModel y put para actualizar datos 
 # atravez de la libreria pydantic del modelo BaseModel
 
-class item(BaseModel):
+class Item(BaseModel):
     name: str
     price: float
-    is_offert: Union(bool,None) = None
+    is_offer: Union[bool,None] = None
 
+#actualizamos un item 
 @app.put("/items/{item_id}")
 def update_item(item_id:int,item:Item):
-    return {'item_name': item.name, 'item_id':item_id}
+    return {'item_name': Item.name, 'item_id':item_id}
