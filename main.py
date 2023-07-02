@@ -53,4 +53,4 @@ class Item(BaseModel):
 #actualizamos un item 
 @app.put("/items/{item_id}")
 def update_item(item_id:int,item:Item):
-    return {'item_name': Item.name, 'item_id':item_id}
+    return {'item_name': item.name, 'item_id':item_id}
